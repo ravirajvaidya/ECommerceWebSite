@@ -43,7 +43,8 @@
 /* Category name */
 .categoriesContainer h3 {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
     margin: 0;
     white-space: nowrap;
     display: flex;
