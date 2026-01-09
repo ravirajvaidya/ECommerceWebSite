@@ -1,0 +1,12 @@
+<div class="deals-section">
+    <h2>Top Deals</h2>
+
+    <div class="deals-grid">
+        <div class="deal-card" *ngFor="let item of deals">
+            <a routerLink="{{item.category}}">
+                <img [src]="item.image" [alt]="item.name">
+                <h3>{{ item.name }}</h3>
+            </a>
+        </div>
+    </div>
+</div>

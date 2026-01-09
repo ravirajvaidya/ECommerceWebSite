@@ -1,0 +1,8 @@
+<div class="categoriesContainer">
+    <div *ngFor="let item of categories">
+        <a routerLink="{{item.category_name }}">
+            <img [src]="item.category_image_url" alt={{item.category_name }}>
+            <h3>{{ item.category_name }}</h3>
+        </a>
+    </div>
+</div>
