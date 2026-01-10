@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-page-products-listing',
@@ -8,5 +8,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './page-products-listing.css',
 })
 export class PageProductsListing {
+  constructor(private route: ActivatedRoute) { }
 
+  ngOnInit() {
+    const categoryName = this.route.snapshot.paramMap.get('categoryName');
+    console.log("DATA RECEIVED categoryName : ", categoryName);
+  }
 }
