@@ -1,0 +1,67 @@
+/* Wrapper */
+.deals-section {
+    padding: 16px 24px;
+    background-color: #fff;
+}
+
+/* Title */
+.deals-section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Grid layout */
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+/* Individual deal card */
+.deal-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.deal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Anchor reset */
+.deal-card a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Deal image */
+.deal-card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+/* Deal name */
+.deal-card h3 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Price / highlight text (optional if added later) */
+.deal-card .price {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2e7d32;
+}

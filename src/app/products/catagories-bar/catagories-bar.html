@@ -1,0 +1,20 @@
+<!-- <div class="categoriesContainer">
+    <div *ngFor="let item of categories">
+        <a routerLink="{{item.category_name }}">
+            <img [src]="item.category_image_url" alt={{item.category_name }}>
+            <h3>{{ item.category_name }}</h3>
+        </a>
+    </div>
+</div> -->
+
+<div class="categoriesContainer" *ngIf="(categories$ | async) as categories; else loading">
+    <div *ngFor="let item of categories">
+        <a [routerLink]="[item.category_name,item.category_name]">
+            <img *ngIf="item.category_image_url" [src]="item.category_image_url" [alt]="item.category_name" />
+            <h3>{{ item.category_name }}</h3>
+        </a>
+    </div>
+</div>
+
+<ng-template #loading>
+</ng-template>
