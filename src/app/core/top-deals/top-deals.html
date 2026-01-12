@@ -1,12 +1,16 @@
 <div class="deals-section">
     <h2>Top Deals</h2>
 
-    <div class="deals-grid">
+    <div class="deals-grid" *ngIf="(deals$ | async) as deals; else loading">
         <div class="deal-card" *ngFor="let item of deals">
-            <a routerLink="{{item.category}}">
-                <img [src]="item.image" [alt]="item.name">
-                <h3>{{ item.name }}</h3>
+            <a routerLink="{{item.category_id}}">
+                <img *ngIf="item.product_images?.length" [src]="item.product_images[0].image_url"
+                    [alt]="item.category_name" />
+                <h3>{{ item.product_name }}</h3>
             </a>
         </div>
     </div>
+
+    <ng-template #loading>
+    </ng-template>
 </div>

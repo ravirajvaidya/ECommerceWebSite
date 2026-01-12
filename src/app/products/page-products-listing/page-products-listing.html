@@ -1,8 +1,13 @@
-<p>page-products-listing works!</p>
-<nav>
-    <a [routerLink]="['/productdetails','Product1']">Product1</a><br>
-    <a [routerLink]="['/productdetails','Product2']">Product2</a><br>
-    <a [routerLink]="['/productdetails','Product3']">Product3</a><br>
-    <a [routerLink]="['/productdetails','Product4']">Product4</a><br>
-</nav>
-<!-- <router-outlet></router-outlet> -->
+<div *ngIf="(lstOfProducts$ | async) as products; else loading" class="products-grid">
+    <div></div>
+    <div *ngFor="let item of products; let idx = index">
+        <a [routerLink]="['/productdetails',item.product_id]">
+            <img *ngIf="item.product_images?.length" [src]="item.product_images[0].image_url"
+                [alt]="item.category_name" />
+            <h3>{{ item.product_name }}</h3>
+        </a>
+    </div>
+</div>
+
+<ng-template #loading>
+</ng-template>
