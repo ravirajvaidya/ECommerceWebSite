@@ -1,6 +1,84 @@
-<div class="container">
-    <p>page-product-details works! {{path}}</p>
-    <div class="">
+<!-- <div *ngIf="aProduct$ | async as product">
+    <div class="container">
+        <p>page-product-details works! {{product.product_id}}</p>
+        <h2>{{product.product_name}}</h2><br>
+        <div class="containerImages">
+            <div *ngIf="product.product_images?.length">
+                <div *ngFor="let aImage of product.product_images">
+                    <img [src]="aImage.image_url" [alt]="product.product_name" />
+                </div>
+            </div>
+            <div>
+                <button>Add To Cart</button>
+                <button>Buy Now</button>
+            </div>
+        </div>
+        <div class="containerProductDetails">
+            <div>
+                <h3>Specifications</h3>
+                <label for="pDescription">{{product.description}}</label> <br>
+                <label for="pCost">Rs : 2000.00</label>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div *ngIf="aProduct$ | async as product" class="product-page">
+
+    <!-- LEFT : IMAGE GALLERY -->
+    <div class="left-section">
+
+        <!-- Thumbnail list -->
+        <div class="thumbnail-list" *ngIf="product.product_images?.length">
+            <img *ngFor="let img of product.product_images" [src]="img.image_url" class="thumbnail" alt="thumbnail"
+                (click)="UpdateSelectedImg(img.image_url)">
+        </div>
+
+        <!-- Main image -->
+        <div class="main-image" *ngIf="product.product_images?.length">
+            <img [src]="pSelectedImage" [alt]="product.product_name">
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn-cart">ADD TO CART</button>
+            <button class="btn-buy">BUY NOW</button>
+        </div>
+    </div>
+
+    <!-- RIGHT : PRODUCT DETAILS -->
+    <div class="right-section">
+
+        <h1 class="product-title">{{ product.product_name }}</h1>
+
+        <div class="rating">
+            <span class="rating-badge">4.5 ★</span>
+            <span class="rating-count">4,890 Ratings & 446 Reviews</span>
+        </div>
+
+        <div class="price-section">
+            <span class="price">{{product.price_actual}}</span>
+            <span class="original-price">{{product.price_actual}}</span>
+            <span class="discount">{{product.price_discounted}}</span>
+        </div>
+
+        <p class="delivery">Secure delivery by <b>Tomorrow</b></p>
+
+        <!-- Offers -->
+        <div class="offers">
+            <h3>Available Offers</h3>
+            <ul>
+                <li>Bank Offer: Flat ₹80 instant discount on CRED UPI</li>
+                <li>10% off on HDFC Credit Card Transactions</li>
+                <li>Extra ₹5000 off on Special Price</li>
+            </ul>
+        </div>
+
+        <!-- Specifications -->
+        <div class="specifications">
+            <h3>Description</h3>
+            <p>{{ product.description }}</p>
+        </div>
 
     </div>
 </div>

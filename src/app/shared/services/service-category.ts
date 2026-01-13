@@ -34,4 +34,24 @@ export class ServiceCategory {
     );
   }
 
+  GetCategorieName(catId: number): Observable<string> {
+    const promis = this.supabaseService.getClient()
+      .from('category').select('*').eq('category_id', catId).single();
+
+    return from(promis).pipe(
+      map(response => {
+        if (response.error) {
+          throw new Error(response.error.message); // Trigger catchError if Supabase returns an error
+        }
+        return response.data.category_name ?? "Unknow Category";
+      }),
+      catchError(error => {
+        console.error('Supabase fetch error:', error);
+        // Return an empty array so the UI can still render without crashing
+        return of("Unknow Category");
+      })
+    );
+
+  }
+
 }

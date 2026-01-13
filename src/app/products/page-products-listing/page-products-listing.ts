@@ -21,17 +21,13 @@ export class PageProductsListing implements OnInit {
     private productService: ServiceProducts, private catService: ServiceCategory) { }
 
   ngOnInit() {
-    // const categoryParam = this.route.snapshot.paramMap.get('categoryName');
-    // let categoryId!: number;
-    // if (categoryParam) {
-    //   categoryId = parseInt(categoryParam, 10);
-    // }
-    // console.log("DATA RECEIVED categoryName : ", categoryId);
-    // this.lstOfProducts$ = this.productService.GetProductsAsPerCategories(categoryId);
     this.route.paramMap.subscribe(params => {
       const catId = Number(params.get('categoryName')); // ✅ REQUIRED
       console.log('Category ID from route =', catId);
-      // this.selectedCategorie = this.catService.GetAllCategories();
+      this.catService.GetCategorieName(catId).subscribe((x: any) => {
+        this.selectedCategorie = x;
+      });
+
       this.lstOfProducts$ = this.productService.GetProductsAsPerCategoriesWithImages(catId);
     });
 

@@ -1,3 +1,5 @@
+import { IProductImages } from "./IProductImages";
+
 export interface IProducts {
     product_id: number;        // bigint (int8)
     seller_id: number;         // bigint (int8)
@@ -8,4 +10,9 @@ export interface IProducts {
     brand: string | null;      // varchar (nullable)
     status: boolean | null;    // boolean (nullable)
     created_at: string | null; // timestamptz (ISO string)
+    price_actual: number | null;
+    price_discounted: number | null;
+
+    // Joined data
+    product_images?: IProductImages[] | null;
 }

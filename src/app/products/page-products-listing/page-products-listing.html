@@ -1,5 +1,7 @@
+<div>
+    <h2>{{selectedCategorie}}</h2>
+</div>
 <div *ngIf="(lstOfProducts$ | async) as products; else loading" class="products-grid">
-    <div></div>
     <div *ngFor="let item of products; let idx = index">
         <a [routerLink]="['/productdetails',item.product_id]">
             <img *ngIf="item.product_images?.length" [src]="item.product_images[0].image_url"
