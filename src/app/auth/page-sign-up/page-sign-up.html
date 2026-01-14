@@ -5,13 +5,14 @@
 
         <!-- Signup Form -->
         <form (ngSubmit)="OnSignUpClicked(signUpForm)" #signUpForm="ngForm">
-            <input type="text" placeholder="Full Name" required>
 
-            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Full Name" ngModel required name="fullName" id="fullName">
 
-            <input type="password" placeholder="Password" required>
+            <input type="email" placeholder="Email" ngModel required name="email" id="email">
 
-            <input type="tel" placeholder="Mobile" required>
+            <input type="password" placeholder="Password" ngModel required name="password" id="password">
+
+            <input type="tel" placeholder="Mobile" ngModel required name="mobile" id="mobile">
 
             <!-- Role (default) -->
             <input type="hidden" value="User">

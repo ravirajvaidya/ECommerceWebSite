@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from "@angular/router";
+import { ServiceAuth } from '../Services/service-auth';
 
 @Component({
   selector: 'app-page-login',
@@ -10,11 +11,17 @@ import { Router, RouterLink } from "@angular/router";
 })
 export class PageLogin {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: ServiceAuth) { }
 
-  OnLogInClicked(formData: NgForm): void {
-    alert('Login Successfull');
-    this.router.navigate(['/']);
+  async OnLogInClicked(formData: NgForm): Promise<void> {
+    try {
+      let result = this.authService.signIn(formData.value.email, formData.value.password);
+      alert("Welcome : " + (await result).user.email);
+      this.router.navigate(['/']);
+    }
+    catch (err: any) {
+      alert(err.message || 'SignIn failed');
+    }
   }
 
   goToSignUp(): void {

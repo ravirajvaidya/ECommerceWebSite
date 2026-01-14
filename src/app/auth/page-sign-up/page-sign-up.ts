@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { ServiceAuth } from '../Services/service-auth';
 
 @Component({
   selector: 'app-page-sign-up',
@@ -11,16 +12,25 @@ import { Router, RouterLink } from '@angular/router';
 export class PageSignUp {
   role: string = 'User'; // default role
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: ServiceAuth) { }
 
-  OnSignUpClicked(formData: NgForm) {
-    // TODO: Call signup API here
-    // Payload should include role = 'User'
+  async OnSignUpClicked(formData: NgForm) {
 
-    alert('Role:' + this.role);
+    console.log("Form Values :", formData.value);
 
-    // Redirect after successful signup
-    // this.router.navigate(['/Login']);
+    try {
+      await this.authService.signUp(
+        formData.value.email,
+        formData.value.password,
+        formData.value.fullName,
+        formData.value.mobile
+      );
+
+      this.router.navigate(['/Login']);
+
+    } catch (err: any) {
+      alert(err.message || 'Signup failed');
+    }
   }
 
   goToLoginPage(): void {
