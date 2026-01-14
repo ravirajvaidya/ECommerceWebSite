@@ -3,7 +3,7 @@
 
     <div class="deals-grid" *ngIf="(deals$ | async) as deals; else loading">
         <div class="deal-card" *ngFor="let item of deals">
-            <a routerLink="{{item.category_id}}">
+            <a [routerLink]="['productdetails',item.product_id]">
                 <img *ngIf="item.product_images?.length" [src]="item.product_images[0].image_url"
                     [alt]="item.category_name" />
                 <h3>{{ item.product_name }}</h3>

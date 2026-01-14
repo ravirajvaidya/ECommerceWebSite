@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ServiceProducts } from '../../shared/services/service-products';
-import { IProducts } from '../../shared/interfaces/IProducts';
+import { IProducts } from '../Interfaces/IProducts';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { ServiceProducts } from '../Services/service-products';
 
 @Component({
   selector: 'app-page-product-details',

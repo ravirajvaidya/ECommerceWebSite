@@ -10,6 +10,10 @@
         <input type="search" name="searchItem" id="search" placeholder="Search for Products, Brands and More">
     </div>
     <div class="profileServicesContiner">
+        <a routerLink="BecomeSeller">
+            <img src="HeaderBar\seller.png" alt="profileImg">
+            <h4>Become A Seller</h4>
+        </a>
         <a routerLink="Profile" *ngIf="isLoggedIn ; else  NotLoggedIn">
             <img src="HeaderBar\user.png" alt="profileImg">
             <h4>My Profile</h4>

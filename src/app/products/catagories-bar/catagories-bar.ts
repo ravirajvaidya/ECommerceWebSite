@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, } from '@angular/core';
 import { RouterLink } from "@angular/router";
-import { ServiceCategory } from '../../shared/services/service-category';
 import { Observable } from 'rxjs';
+import { ServiceCategory } from '../Services/service-category';
 
 @Component({
   selector: 'app-catagories-bar',

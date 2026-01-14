@@ -1,8 +1,8 @@
 import { CommonModule, SlicePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
-import { ServiceProducts } from '../../shared/services/service-products';
 import { map, Observable } from 'rxjs';
+import { ServiceProducts } from '../../products/Services/service-products';
 
 @Component({
   selector: 'app-top-deals',

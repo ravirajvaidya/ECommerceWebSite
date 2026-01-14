@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { SupabaseService } from './supabase-service';
 import { catchError, from, map, Observable, of, throwError } from 'rxjs';
-import { IProducts } from '../interfaces/IProducts';
+import { SupabaseService } from '../../shared/services/supabase-service';
+import { IProducts } from '../Interfaces/IProducts';
 
 @Injectable({
   providedIn: 'root',

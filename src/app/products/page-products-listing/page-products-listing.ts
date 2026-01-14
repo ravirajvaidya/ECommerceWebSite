@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
-import { ServiceProducts } from '../../shared/services/service-products';
 import { Observable } from 'rxjs';
-import { ServiceCategory } from '../../shared/services/service-category';
-import { ICategories } from '../../shared/interfaces/ICategories';
+import { ICategories } from '../Interfaces/ICategories';
+import { ServiceProducts } from '../Services/service-products';
+import { ServiceCategory } from '../Services/service-category';
 
 @Component({
   selector: 'app-page-products-listing',
