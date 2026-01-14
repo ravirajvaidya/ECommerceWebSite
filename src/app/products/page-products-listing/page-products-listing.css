@@ -10,7 +10,7 @@
 
 /* ================= PRODUCT CARD ================= */
 
-.products-grid > div {
+.products-grid>div {
     background: #ffffff;
     border-radius: 10px;
     padding: 16px;
@@ -18,7 +18,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.products-grid > div:hover {
+.products-grid>div:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
@@ -88,5 +88,118 @@
 @media (max-width: 600px) {
     .products-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ================= CATEGORY STRIP WRAPPER ================= */
+
+.category-strip-wrapper {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* ================= CATEGORY MENU STRIP ================= */
+
+.category-strip {
+    display: flex;
+    justify-content: center;
+    /* CENTER ALIGN */
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.category-strip::-webkit-scrollbar {
+    display: none;
+}
+
+/* ================= CATEGORY LINKS ================= */
+
+.category-strip a {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    /* Important for horizontal scroll */
+}
+
+.category-strip a h5 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Hover Effect */
+.category-strip a:hover {
+    background-color: #2874f0;
+}
+
+.category-strip a:hover h5 {
+    color: #ffffff;
+}
+
+/* ================= SELECTED CATEGORY TITLE ================= */
+
+.selected-category {
+    width: 100%;
+    background: linear-gradient(135deg, #2874f0, #1a5fd0);
+    padding: 14px 24px;
+    box-shadow: 0 4px 10px rgba(40, 116, 240, 0.25);
+}
+
+.selected-category h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .category-strip {
+        justify-content: flex-start;
+        /* natural scroll on tablets */
+        gap: 14px;
+    }
+
+    .category-strip a {
+        padding: 6px 14px;
+    }
+
+    .category-strip a h5 {
+        font-size: 13px;
+    }
+
+    .selected-category h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .category-strip {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .category-strip a h5 {
+        font-size: 12px;
+    }
+
+    .selected-category {
+        padding: 12px 16px;
+    }
+
+    .selected-category h2 {
+        font-size: 18px;
     }
 }

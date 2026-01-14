@@ -1,0 +1,28 @@
+<div class="login-page">
+    <div class="login-container">
+        <img src="WebsiteLogo.png" alt="Logo" class="logo">
+
+        <form (ngSubmit)="OnLogInClicked(logInForm)" #logInForm="ngForm">
+
+            <input type="text" placeholder="Username" name="userName" ngModel required>
+
+            <input type="password" placeholder="Password" name="password" ngModel required>
+
+            <!-- LOGIN -->
+            <button type="submit" class="btn login-btn" [disabled]="!logInForm.valid">
+                Login
+            </button>
+
+            <!-- SIGNUP -->
+            <button type="button" class="btn signup-btn" (click)="goToSignUp()">
+                Sign Up
+            </button>
+
+            <!-- FORGOT PASSWORD -->
+            <a class="forgot-link" (click)="goToForgotPassword()">
+                Forgot Password?
+            </a>
+
+        </form>
+    </div>
+</div>

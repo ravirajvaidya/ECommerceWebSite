@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { ServiceProducts } from '../../shared/services/service-products';
 import { Observable } from 'rxjs';
 import { ServiceCategory } from '../../shared/services/service-category';
+import { ICategories } from '../../shared/interfaces/ICategories';
 
 @Component({
   selector: 'app-page-products-listing',
@@ -15,6 +16,8 @@ export class PageProductsListing implements OnInit {
 
   lstOfProducts$!: Observable<any[]>;
 
+  lstOfCategories$!: Observable<ICategories[]>;
+
   selectedCategorie!: string;
 
   constructor(private route: ActivatedRoute,
@@ -24,6 +27,9 @@ export class PageProductsListing implements OnInit {
     this.route.paramMap.subscribe(params => {
       const catId = Number(params.get('categoryName')); // ✅ REQUIRED
       console.log('Category ID from route =', catId);
+
+      this.lstOfCategories$ = this.catService.GetAllCategories();
+
       this.catService.GetCategorieName(catId).subscribe((x: any) => {
         this.selectedCategorie = x;
       });

@@ -1,6 +1,14 @@
-<div>
-    <h2>{{selectedCategorie}}</h2>
+<div class="category-strip-wrapper">
+    <div *ngIf="(lstOfCategories$ | async) as categories" class="category-strip">
+        <a *ngFor="let item of categories" [routerLink]="['/category',item.category_id]">
+            <h5>{{item.category_name}}</h5>
+        </a>
+    </div>
+    <div class="selected-category">
+        <h2>{{selectedCategorie}}</h2>
+    </div>
 </div>
+
 <div *ngIf="(lstOfProducts$ | async) as products; else loading" class="products-grid">
     <div *ngFor="let item of products; let idx = index">
         <a [routerLink]="['/productdetails',item.product_id]">

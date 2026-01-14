@@ -1,0 +1,28 @@
+<div class="login-page">
+    <div class="login-container">
+        <!-- Logo -->
+        <img src="WebsiteLogo.png" alt="ShopKart Logo" class="logo">
+
+        <!-- Signup Form -->
+        <form (ngSubmit)="OnSignUpClicked(signUpForm)" #signUpForm="ngForm">
+            <input type="text" placeholder="Full Name" required>
+
+            <input type="email" placeholder="Email" required>
+
+            <input type="password" placeholder="Password" required>
+
+            <input type="tel" placeholder="Mobile" required>
+
+            <!-- Role (default) -->
+            <input type="hidden" value="User">
+
+            <button type="submit" class="btn signup-btn" [disabled]="!signUpForm.valid">
+                Sign Up
+            </button>
+
+        </form>
+        <a class="forgot-link" routerLink="/login" (click)="goToLoginPage()">
+            Already have an account? Login
+        </a>
+    </div>
+</div>

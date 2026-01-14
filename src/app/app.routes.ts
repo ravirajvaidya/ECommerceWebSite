@@ -6,12 +6,16 @@ import { PageNotFound } from './core/page-not-found/page-not-found';
 import { Main } from './shared/components/main/main';
 import { PageProductsListing } from './products/page-products-listing/page-products-listing';
 import { PageProductDetails } from './products/page-product-details/page-product-details';
+import { PageLogin } from './auth/page-login/page-login';
+import { PageSignUp } from './auth/page-sign-up/page-sign-up';
 
 export const routes: Routes = [
     {
         path: "", component: Main,
         children: [
             { path: "", component: Home },
+            { path: "Login", component: PageLogin },
+            { path: "SignUp", component: PageSignUp },
             { path: "Profile", component: PageProfile },
             { path: "Cart", component: PageShopingcart },
             // { path: "Mobiles/:categoryName", component: PageProductsListing },
