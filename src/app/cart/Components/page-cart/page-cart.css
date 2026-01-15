@@ -1,0 +1,147 @@
+.cart-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    font-family: Arial, sans-serif;
+}
+
+.cart-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* CART ITEM */
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+}
+
+.product-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* DETAILS */
+.product-details {
+    flex: 1;
+}
+
+.product-details h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.product-details p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+.more {
+    color: #2874f0;
+    cursor: pointer;
+}
+
+/* QTY */
+.qty-controls {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-controls button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    cursor: pointer;
+}
+
+.qty-controls span {
+    min-width: 20px;
+    text-align: center;
+}
+
+/* PRICE */
+.price-section {
+    text-align: right;
+}
+
+.remove-btn {
+    background: #fee2e2;
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2874f0;
+}
+
+/* SUMMARY */
+.cart-summary {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.promo {
+    font-size: 12px;
+    background: #eef2ff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #2874f0;
+    cursor: pointer;
+}
+
+.amount {
+    font-weight: bold;
+    color: #2874f0;
+}
+
+.note {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 14px;
+    background: #2874f0;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background: #1f5fc5;
+}
